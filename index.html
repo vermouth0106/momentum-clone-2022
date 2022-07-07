@@ -8,16 +8,21 @@
     <title>Momentum Clone</title>
   </head>
   <body>
-    <h2 id="clock">00:00:00</h2>
-    <form id="login-form" class="hidden">
-      <input
-        required
-        maxlength="15"
-        type="text"
-        placeholder="What is your name?"
-      />
-      <input type="submit" value="Click" />
-    </form>
+    <section class="login-screen">
+      <div class="container container__login-box">
+        <h1 class="login-screen__header">Welcome to 'Just do it'</h1>
+        <form id="login-form">
+          <input
+            required
+            maxlength="15"
+            type="text"
+            placeholder="What is your name?"
+          />
+          <input type="submit" value="Click" />
+        </form>
+        <p class="clock login-screen__clock">00:00:00</p>
+      </div>
+    </section>
     <h1 id="greeting" class="hidden"></h1>
     <button id="reset__user" class="hidden">reset</button>
     <form id="todo-form">
