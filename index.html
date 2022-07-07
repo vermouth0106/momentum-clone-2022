@@ -9,7 +9,7 @@
   </head>
   <body>
     <section class="login-screen">
-      <div class="container container__login-box">
+      <div class="login-screen__login-box">
         <h1 class="login-screen__header">Welcome to 'Just do it'</h1>
         <form id="login-form">
           <input
@@ -23,28 +23,40 @@
         <p class="clock login-screen__clock">00:00:00</p>
       </div>
     </section>
-    <h1 id="greeting" class="hidden"></h1>
-    <button id="reset__user" class="hidden">reset</button>
-    <form id="todo-form">
-      <input
-        type="text"
-        placeholder="Write a to do and press enter."
-        required
-      />
-    </form>
-    <ul id="todo-list"></ul>
-    <div id="quote">
-      <span></span>
-      <span></span>
-    </div>
-    <div id="weather">
-      <span></span>
-      <span></span>
-    </div>
+    <section class="main-screen">
+      <div class="main-screen__container">
+        <div class="main-screen__box">
+          <div id="weather">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="main-screen__box">
+          <h1 id="greeting" class="hidden"></h1>
+          <div id="quote">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="main-screen__box">
+          <form id="todo-form">
+            <input
+              type="text"
+              placeholder="Write a to do and press enter."
+              required
+            />
+          </form>
+          <ul id="todo-list"></ul>
+        </div>
+        <div class="main-screen__box">
+          <button id="reset__user" class="hidden">reset</button>
+        </div>
+      </div>
+    </section>
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
-    <script src="js/background.js"></script>
+    <!-- <script src="js/background.js"></script> -->
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
   </body>

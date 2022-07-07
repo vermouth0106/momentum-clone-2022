@@ -1,5 +1,7 @@
 @import "reset.css";
+@import "login.css";
 
+/* 글씨 안 보여서 임시로 설정 */
 span,
 p,
 h1,
@@ -19,52 +21,34 @@ body {
   text-transform: uppercase;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  width: 350px;
-  height: 550px;
-}
+/* main screen */
 
-.background-img {
-  z-index: -99;
+.main-screen {
   position: fixed;
   top: 0;
   left: 0;
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  background-color: white;
 }
 
-/* login */
-
-.login-screen {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+.main-screen__container {
+  margin: 30px 20px;
+  padding: 20px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(5px);
+  background-color: beige;
 }
 
-.login-screen__header {
-  margin-bottom: 70px;
-  font-size: 25px;
-  font-weight: 600;
+.main-screen__box {
+  margin: 0px 15px;
+  width: 300px;
+  height: 620px;
+  background-color: white;
 }
 
-.login-screen__clock {
-  margin-top: 70px;
-  font-size: 20px;
-}
-
-.container__login-box {
-  justify-content: center;
-  align-items: center;
-  width: 550px;
-  height: 350px;
+.main-screen__box:last-child {
+  width: 80px;
 }
