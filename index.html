@@ -25,19 +25,21 @@
     <section class="main-screen">
       <div class="main-screen__container">
         <div class="main-screen__box">
-          <div class="d-day main-screen__inside-box">
-            <span>Set your D-day</span>
-            <form class="d-day__form">
+          <div id="d-day" class="main-screen__inside-box">
+            <span id="d-day__header">Set your D-day</span>
+            <form id="d-day__form">
               <input type="date" required />
               <input type="submit" value="Click" />
             </form>
-            <span></span>
+            <span id="d-day__result"></span>
+            <button id="reset__d-day" class="hidden">day reset</button>
           </div>
           <div class="music main-screen__inside-box">
             <span>music</span>
           </div>
           <div id="weather" class="main-screen__inside-box">
             <span></span>
+            <i id="weather-icon"></i>
             <span></span>
           </div>
         </div>
@@ -45,9 +47,7 @@
           <div class="name main-screen__inside-box">
             <h1 id="greeting" class="hidden"></h1>
           </div>
-          <div class="img main-screen__inside-box">
-            <span>img</span>
-          </div>
+          <div id="img-box" class="main-screen__inside-box"></div>
           <div id="quote" class="main-screen__inside-box">
             <span></span>
             <span></span>
@@ -67,12 +67,7 @@
             </form>
             <ul id="todo-list"></ul>
           </div>
-          <div class="main-screen__inside-box">
-            <form id="todo-form">
-              <input type="text" placeholder="not to do" required />
-            </form>
-            <ul id="todo-list"></ul>
-          </div>
+          <div class="main-screen__inside-box"></div>
         </div>
         <div class="main-screen__box links">
           <div class="main-screen__inside-box">
@@ -95,9 +90,13 @@
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
-    <!-- <script src="js/background.js"></script> -->
+    <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
-    <script src="js/d-day.js"></script>
+    <script src="js/decimalday.js"></script>
+    <script
+      src="https://kit.fontawesome.com/b2293cc840.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
