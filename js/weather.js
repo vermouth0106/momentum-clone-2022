@@ -22,15 +22,25 @@ function onGeoSuccess(position) {
   fetch(url)
     .then((respone) => respone.json())
     .then((data) => {
-      const weather = document.querySelector("#weather span:first-child");
-      const weatherIcon = document.querySelector("#weather-icon");
-      const city = document.querySelector("#weather span:last-child");
+      const weatherName = document.querySelector("#weather .weather__name");
+      const weatherTemp = document.querySelector(".weather__temp");
+      const weatherIcon = document.querySelector(".weather__icon i");
+      const weatherHumidity = document.querySelector(
+        ".weather__humidity__text"
+      );
+      const weatherWindSpeed = document.querySelector(
+        ".weather__wind-speed__text"
+      );
+      const city = document.querySelector(".weather__city");
 
       const icon = parseInt(data.weather[0].icon.substring(0, 2));
 
-      weather.innerText = `${data.weather[0].main} / ${data.main.temp} / ${data.main.humidity} / ${data.wind.speed}`;
-      weatherIcon.classList = `${weathericons[icon]}`;
+      weatherName.innerText = `${data.weather[0].main}`;
       city.innerText = data.name;
+      weatherTemp.innerText = `${data.main.temp}℃`;
+      weatherHumidity.innerText = `${data.main.humidity}%`;
+      weatherWindSpeed.innerText = `${data.wind.speed}km/h`;
+      weatherIcon.classList = `${weathericons[icon]}`;
     });
 }
 

@@ -20,7 +20,7 @@ function paintGreetings(username) {
   loginScreen.classList.add(HIDDEN_CLASSNAME);
   loginScreen.classList.remove("login-screen");
 
-  greeting.innerText = `Hello ${username}`;
+  greeting.innerText = username;
   greeting.classList.remove(HIDDEN_CLASSNAME);
   resetUser.classList.remove(HIDDEN_CLASSNAME);
 }
