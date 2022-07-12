@@ -9,11 +9,16 @@ body {
   display: none;
 }
 
-.reset__user {
-  text-transform: uppercase;
-}
-
 /* main screen */
+/* background-img */
+
+#img-box > img {
+  z-index: -99;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
 
 .main-screen {
   width: 100vw;
@@ -32,6 +37,7 @@ body {
   align-items: center;
   background-color: white;
   border-radius: 30px;
+  opacity: 0.8;
 }
 
 .main-screen__box {
@@ -45,8 +51,7 @@ body {
 }
 
 .main-screen__inside-box {
-  margin-bottom: 5px;
-  width: 250px;
+  width: 100%;
   height: 33%;
   display: flex;
   flex-direction: column;
@@ -55,7 +60,9 @@ body {
   background-color: aqua;
 }
 
-.username {
+/* screen-left */
+
+.username__container {
   height: 100px;
   line-height: 200%;
 }
@@ -65,9 +72,13 @@ body {
   font-weight: 600;
 }
 
-#greeting {
+.username__name {
   font-size: 30px;
   font-weight: 600;
+}
+
+.username__reset {
+  text-transform: uppercase;
 }
 
 #weather {
@@ -142,11 +153,74 @@ body {
   width: 100%;
 }
 
-/* img */
-
-#img-box > img {
-  width: 100%;
-  height: 100%;
+.music {
+  height: 100px;
 }
 
-/* clock */
+.developer-links {
+  padding-left: 55px;
+  box-sizing: border-box;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.developer-link {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+}
+
+.developer-link:visited {
+  color: black;
+}
+
+.developer-link__icon {
+  margin-right: 5px;
+  width: 25px;
+  height: 25px;
+}
+
+/* screen-todo (center) */
+
+.main-screen__todo {
+  width: 540px;
+}
+
+.todo-header {
+  margin-bottom: 50px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.todo-form {
+  padding: 0px 10px;
+}
+
+.todo-form input {
+  margin-bottom: 50px;
+  width: 300px;
+  height: 35px;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 20px;
+}
+
+.todo-form input:focus {
+  outline: none;
+}
+
+.todo-list {
+  padding-left: 50px;
+}
+
+.todo-list li {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* screen-right */

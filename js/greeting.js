@@ -1,8 +1,8 @@
-const loginScreen = document.querySelector(".login-screen");
-const loginForm = document.querySelector("#login-form");
-const loginInput = document.querySelector("#login-form input");
-const greeting = document.querySelector("#greeting");
-const resetUser = document.querySelector("#reset__user");
+const loginWindow = document.querySelector(".login-window");
+const loginForm = document.querySelector(".login-form");
+const loginInput = document.querySelector(".login-form input");
+const paintUsername = document.querySelector(".username__name");
+const resetUsername = document.querySelector(".username__reset");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
@@ -17,12 +17,12 @@ function onLoginSubmit(event) {
 
 function paintGreetings(username) {
   // hide login screen
-  loginScreen.classList.add(HIDDEN_CLASSNAME);
-  loginScreen.classList.remove("login-screen");
+  loginWindow.classList.add(HIDDEN_CLASSNAME);
+  loginWindow.classList.remove("login-window");
 
-  greeting.innerText = username;
-  greeting.classList.remove(HIDDEN_CLASSNAME);
-  resetUser.classList.remove(HIDDEN_CLASSNAME);
+  paintUsername.innerText = username;
+  paintUsername.classList.remove(HIDDEN_CLASSNAME);
+  resetUsername.classList.remove(HIDDEN_CLASSNAME);
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
@@ -38,4 +38,4 @@ function onResetClick() {
   window.location.reload();
 }
 
-resetUser.addEventListener("click", onResetClick);
+resetUsername.addEventListener("click", onResetClick);

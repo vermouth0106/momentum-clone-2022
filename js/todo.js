@@ -1,6 +1,7 @@
-const toDoForm = document.getElementById("todo-form");
+const toDoForm = document.querySelector(".todo-form");
 const toDoInput = toDoForm.querySelector("input");
-const toDoList = document.getElementById("todo-list");
+const toDoAlert = toDoForm.querySelector(".todo__alert");
+const toDoList = document.querySelector(".todo-list");
 
 const TODOS_KEY = "todos";
 
@@ -18,20 +19,28 @@ function deleteToDo(event) {
 }
 
 function paintTodo(newTodo) {
-  const li = document.createElement("li");
-  li.id = newTodo.id;
+  if (toDos.length > 5) {
+    toDoAlert.classList.remove(HIDDEN_CLASSNAME);
+    setTimeout(function () {
+      toDoAlert.classList.add(HIDDEN_CLASSNAME);
+    }, 1000);
+    toDos.pop();
+  } else {
+    const li = document.createElement("li");
+    li.id = newTodo.id;
 
-  const span = document.createElement("span");
-  span.innerText = newTodo.text;
+    const span = document.createElement("span");
+    span.innerText = newTodo.text;
 
-  const button = document.createElement("button");
-  button.innerText = "❌";
-  button.addEventListener("click", deleteToDo);
+    const buttonDel = document.createElement("button");
+    buttonDel.innerText = "❌";
+    buttonDel.addEventListener("click", deleteToDo);
 
-  li.appendChild(span);
-  li.appendChild(button);
+    li.appendChild(span);
+    li.appendChild(buttonDel);
 
-  toDoList.appendChild(li);
+    toDoList.appendChild(li);
+  }
 }
 
 function handleToDoSubmit(event) {

@@ -8,11 +8,11 @@
     <title>Momentum Clone</title>
   </head>
   <body>
-    <!-- login screen -->
-    <section class="login-screen">
-      <div class="login-screen__login-box">
-        <h1 class="login-screen__header">Welcome to 'Just do it'</h1>
-        <form id="login-form">
+    <!-- login window -->
+    <div class="login-window">
+      <div class="login-window__container">
+        <h1 class="login-window__header">welcome to blabla</h1>
+        <form class="login-form">
           <input
             required
             maxlength="15"
@@ -22,15 +22,24 @@
           <input type="submit" value="Click" />
         </form>
       </div>
-    </section>
+    </div>
+
+    <!-- quotes -->
+    <div>
+      <div id="quote" class="main-screen__inside-box">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
 
     <!-- main screen -->
-    <main class="main-screen">
+    <div id="img-box" class="main-screen">
       <div class="main-screen__container">
-        <div class="main-screen__box">
-          <div class="username main-screen__inside-box">
+        <div class="main-screen__left main-screen__box">
+          <div class="username__container main-screen__inside-box">
             <span class="username__hello">Hello</span>
-            <h1 id="greeting" class="username__name hidden"></h1>
+            <h1 class="username__name hidden"></h1>
+            <button class="username__reset hidden">reset</button>
           </div>
           <div id="weather" class="main-screen__inside-box">
             <h1 class="weather__header">Today's weather</h1>
@@ -61,21 +70,38 @@
           <div class="music main-screen__inside-box">
             <span>music</span>
           </div>
-        </div>
-        <div class="main-screen__box">
-          <div class="main-screen__inside-box">
-            <form id="todo-form">
-              <input
-                type="text"
-                placeholder="Write a to do and press enter."
-                required
-              />
-            </form>
-            <ul id="todo-list"></ul>
+          <div class="developer-links main-screen__inside-box">
+            <a
+              class="developer-link"
+              href="https://github.com/vermouth0106/momentum-clone-2022"
+            >
+              <img class="developer-link__icon" src="icons/github.png" />
+              <span>vermouth0106</span>
+            </a>
+            <a
+              class="developer-link"
+              href="https://www.instagram.com/vermouth_gram/"
+            >
+              <img class="developer-link__icon" src="icons/instagram.png" />
+              <span>vermouth_gram</span>
+            </a>
           </div>
         </div>
-        <div class="main-screen__box">
+        <div class="main-screen__todo main-screen__box">
+          <h1 class="todo-header">To Do List</h1>
+          <form class="todo-form">
+            <div class="todo__alert hidden">maximum is 15</div>
+            <input
+              type="text"
+              placeholder="Write a to do and press enter."
+              required
+            />
+          </form>
+          <ul class="todo-list"></ul>
+        </div>
+        <div class="main-screen__right main-screen__box">
           <div class="main-screen__inside-box">
+            <p class="dateToday"></p>
             <p class="clock">00:00:00</p>
           </div>
           <div id="d-day" class="main-screen__inside-box">
@@ -88,25 +114,17 @@
             <button id="reset__d-day" class="hidden">day reset</button>
           </div>
           <div class="main-screen__inside-box">
-            <button>Light</button>
-            <button>Night</button>
-            <button id="reset__user" class="hidden">reset</button>
-            <a href="https://github.com/vermouth0106/momentum-clone-2022"
-              >GitHub</a
-            >
-            <a href="https://velog.io/@vermouth0106">Velog</a>
-            <a href="https://www.instagram.com/vermouth_gram/">Insta</a>
+            <button>light</button>
+            <button>night</button>
           </div>
         </div>
-    </main>
-    <div id="quote" class="main-screen__inside-box">
-      <span></span>
-      <span></span>
+      </div>
     </div>
+
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
-    <!-- <script src="js/background.js"></script> -->
+    <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/decimalday.js"></script>
