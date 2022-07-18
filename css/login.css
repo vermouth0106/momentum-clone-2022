@@ -8,7 +8,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(15px);
+  color: white;
 }
 
 .login-window__header {
@@ -17,17 +18,39 @@
   font-weight: 600;
 }
 
-.login-window__clock {
-  margin-top: 70px;
-  font-size: 20px;
-}
-
 .login-window__container {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  justify-content: center;
-  align-items: center;
   width: 550px;
   height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-color: black;
+}
+
+.login-window__text {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.login-form {
+  width: 100%;
+  text-align: center;
+}
+
+.login-form input {
+  margin-bottom: 50px;
+  width: 35%;
+  height: 35px;
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  background: none;
+}
+
+.login-form input:focus {
+  outline: none;
 }

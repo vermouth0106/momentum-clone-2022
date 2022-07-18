@@ -1,8 +1,8 @@
-const dateHeader = document.querySelector("#d-day__header");
-const dateResult = document.querySelector("#d-day__result");
-const dateForm = document.querySelector("#d-day__form");
-const dateInput = document.querySelector("#d-day__form input");
-const dateResetBtn = document.querySelector("#reset__d-day");
+const dateHeader = document.querySelector(".d-day__text");
+const dateResult = document.querySelector(".d-day__result");
+const dateForm = document.querySelector(".d-day__form");
+const dateInput = document.querySelector(".d-day__form input");
+const dateResetBtn = document.querySelector(".reset__d-day");
 
 const DECIMALDAY_KEY = "decimal-day";
 
@@ -26,9 +26,7 @@ function onClickDateSubmit(event) {
 
   const diffDay = Math.round((setDay - today) / (1000 * 60 * 60 * 24));
 
-  if (diffDay <= -1) {
-    dateResult.innerText = "Error! 이미 지난 날입니다.";
-  } else if (diffDay === 0) {
+  if (diffDay <= -1 || diffDay === 0) {
     paintDay("day");
   } else {
     paintDay(diffDay);

@@ -1,5 +1,6 @@
 @import "reset.css";
 @import "login.css";
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -19,18 +20,6 @@ body {
   display: none;
 }
 
-/* background image
-.background {
-  z-index: -99;
-  position: fixed;
-  top: 0;
-}
-
-.background img {
-  width: 100%;
-  height: 100%;
-} */
-
 /* main, qutoes container */
 .container {
   width: 1200px;
@@ -43,10 +32,13 @@ body {
   overflow: hidden;
   display: flex;
   align-items: center;
+  border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 10px rgba(1, 1, 1, 0.3);
 }
 
 .main-screen__box {
+  padding: 15px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -54,30 +46,40 @@ body {
 
 .main-screen__inside-box {
   width: 100%;
-  height: 33%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.box__header {
+  margin-bottom: 20px;
+  align-self: flex-start;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.weather__set,
+.time__set,
+.d-day__set,
+.todo-list li {
+  transition: box-shadow 0.2s linear;
+}
+
+.box__shadow:hover {
+  box-shadow: 2px 2px 5px rgba(1, 1, 1, 0.3);
+}
+
 /* screen-left */
 .main-screen__left {
-  padding: 15px 15px 0px 15px;
-  width: 25%;
-  background-color: rgba(173, 173, 173, 0.5);
+  width: 30%;
+  background-color: rgba(233, 240, 255, 0.5);
 }
 
 .username {
+  margin-bottom: 60px;
   height: 100px;
   line-height: 200%;
-}
-
-.username__header {
-  margin-bottom: 20px;
-  align-self: flex-start;
-  font-size: 30px;
-  font-weight: 600;
 }
 
 .username__info {
@@ -96,6 +98,11 @@ body {
   text-align: center;
 }
 
+.username__info div:last-child > i {
+  line-height: 33.5px;
+  opacity: 0.6;
+}
+
 .username__name {
   font-size: 40px;
   font-weight: 600;
@@ -105,45 +112,46 @@ body {
   font-size: 25px;
 }
 
-.username__reset:focus {
+.username__reset:hover {
   cursor: pointer;
 }
 
 .weather {
-  height: 200px;
+  height: 300px;
   display: flex;
   justify-content: flex-start;
 }
 
-.weather__header {
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-size: 20px;
-  font-weight: 700;
+.weather__set {
+  padding: 5px;
+  width: 100%;
+  border-radius: 15px;
+  background-color: white;
 }
 
 .weather__sky {
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .weather__icon {
-  font-size: 50px;
+  font-size: 70px;
 }
 
 .weather__name {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .weather__info {
   width: 100%;
-  height: 100%;
   display: flex;
 }
 
 .weather__info-left {
+  padding-top: 5px;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -152,13 +160,14 @@ body {
 }
 
 .weather__info-left i {
-  margin-bottom: 10px;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .weather__temp {
+  margin-top: 5px;
   margin-left: 10px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .weather__info-right {
@@ -170,21 +179,18 @@ body {
 }
 
 .weather__humidity {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .weather__info-right i {
-  width: 18px;
-}
-
-.weather__name .links div {
-  width: 100%;
+  width: 30px;
+  font-size: 25px;
 }
 
 .developer-links {
-  height: 70px;
+  height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-start;
 }
 
@@ -194,6 +200,7 @@ body {
   align-items: center;
   color: black;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .developer-link:visited {
@@ -208,7 +215,7 @@ body {
 
 /* screen-todo (center) */
 .main-screen__todo {
-  width: 50%;
+  width: 45%;
 }
 
 .todo-header {
@@ -219,15 +226,18 @@ body {
 
 .todo-form {
   padding: 0px 10px;
+  font-family: "Edu NSW ACT Foundation", cursive;
 }
 
 .todo-form input {
   margin-bottom: 50px;
-  width: 300px;
+  width: 90%;
   height: 35px;
   border: none;
   border-bottom: 1px solid black;
+  font-family: "Edu NSW ACT Foundation", cursive;
   font-size: 20px;
+  background: none;
 }
 
 .todo-form input:focus {
@@ -235,24 +245,133 @@ body {
 }
 
 .todo-list {
-  padding-left: 50px;
+  padding-left: 30px;
 }
 
 .todo-list li {
   margin-bottom: 20px;
+  padding: 10px;
+  width: 80%;
+  display: flex;
+  align-items: center;
   font-size: 20px;
   font-weight: 700;
+  border-radius: 10px;
+}
+
+.todo-list button {
+  margin-right: 10px;
+  padding: 0px 10px 0px 10px;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background: none;
+  color: red;
+}
+
+.todo-list button:hover {
+  cursor: pointer;
 }
 
 /* screen-right */
 .main-screen__right {
   width: 25%;
+  background-color: rgba(255, 238, 233, 0.5);
+}
+
+.time {
+  margin-bottom: 20px;
+}
+
+.time__header {
+  align-self: flex-start;
+}
+
+.time__set {
+  padding: 20px 35px 15px 35px;
+  width: 100%;
+  text-align: center;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.dateToday {
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.clock {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.d-day__header {
+  align-self: flex-start;
+}
+
+.d-day__set {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.d-day__text {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.d-day button,
+.d-day__form input {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.d-day button:hover,
+.d-day__form input:hover {
+  cursor: pointer;
+}
+
+.d-day__form input[type="date"]:focus {
+  outline: none;
+}
+
+.d-day button,
+.d-day__form input[type="submit"] {
+  background: none;
+  border: 1.5px solid #ff8d8d;
+  border-radius: 5px;
+}
+
+.d-day__result {
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.random-image {
+  margin-top: 20px;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.random-image__box img {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
 }
 
 /* quotes */
 
 .quotes__container {
-  height: 50px;
+  height: 70px;
   display: flex;
   justify-content: center;
 }
@@ -265,4 +384,18 @@ body {
   align-items: center;
   border-radius: 10px;
   background-color: white;
+  box-shadow: 0px 0px 10px rgba(1, 1, 1, 0.3);
+}
+
+.quote span:first-child {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.quote span:last-child {
+  padding-right: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  opacity: 0.5;
 }

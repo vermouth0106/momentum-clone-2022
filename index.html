@@ -11,27 +11,19 @@
     <!-- login window -->
     <div class="login-window">
       <div class="login-window__container">
-        <h1 class="login-window__header">welcome to blabla</h1>
+        <h1 class="login-window__header">Welcome to Momentum Clone</h1>
+        <p class="login-window__text">What is your name?</p>
         <form class="login-form">
-          <input
-            required
-            maxlength="15"
-            type="text"
-            placeholder="What is your name?"
-          />
-          <input type="submit" value="Click" />
+          <input required maxlength="10" type="text" />
         </form>
       </div>
     </div>
-
-    <!-- background img -->
-    <!-- <div class="background"></div> -->
 
     <!-- main screen -->
     <div class="main-screen container">
       <div class="main-screen__left main-screen__box">
         <div class="username main-screen__inside-box">
-          <span class="username__header">Username</span>
+          <span class="username__header box__header">Username</span>
           <div class="username__info">
             <div></div>
             <div>
@@ -45,27 +37,29 @@
           </div>
         </div>
         <div class="weather main-screen__inside-box">
-          <h1 class="weather__header">Today's weather</h1>
-          <div class="weather__sky">
-            <span class="weather__icon">
-              <i></i>
-            </span>
-            <span class="weather__name"></span>
-            <span class="weather__city"></span>
-          </div>
-          <div class="weather__info">
-            <div class="weather__info-left">
-              <i class="fa-solid fa-temperature-half"></i>
-              <span class="weather__temp"></span>
+          <h1 class="weather__header box__header">Today's weather</h1>
+          <div class="weather__set box__shadow">
+            <div class="weather__sky">
+              <span class="weather__icon">
+                <i></i>
+              </span>
+              <span class="weather__name"></span>
+              <span class="weather__city"></span>
             </div>
-            <div class="weather__info-right">
-              <div class="weather__humidity">
-                <i class="fa-solid fa-droplet"></i>
-                <span class="weather__humidity__text"></span>
+            <div class="weather__info">
+              <div class="weather__info-left">
+                <i class="fa-solid fa-temperature-half"></i>
+                <span class="weather__temp"></span>
               </div>
-              <div class="weather__wind-speed">
-                <i class="fa-solid fa-wind"></i>
-                <span class="weather__wind-speed__text"></span>
+              <div class="weather__info-right">
+                <div class="weather__humidity">
+                  <i class="fa-solid fa-droplet"></i>
+                  <span class="weather__humidity__text"></span>
+                </div>
+                <div class="weather__wind-speed">
+                  <i class="fa-solid fa-wind"></i>
+                  <span class="weather__wind-speed__text"></span>
+                </div>
               </div>
             </div>
           </div>
@@ -80,42 +74,49 @@
           </a>
           <a
             class="developer-link"
-            href="https://www.instagram.com/vermouth_gram/"
+            href="https://www.instagram.com/timeisagiftfromgod/"
           >
             <img class="developer-link__icon" src="icons/instagram.png" />
-            <span>vermouth_gram</span>
+            <span>timeisagiftfromgod</span>
           </a>
         </div>
       </div>
       <div class="main-screen__todo main-screen__box">
         <h1 class="todo-header">To Do List</h1>
         <form class="todo-form">
-          <div class="todo__alert hidden">maximum is 15</div>
+          <div class="todo__alert hidden">You cannot enter more than five.</div>
           <input
             type="text"
             placeholder="Write a to do and press enter."
             required
+            maxlength="30"
           />
         </form>
         <ul class="todo-list"></ul>
       </div>
       <div class="main-screen__right main-screen__box">
-        <div class="main-screen__inside-box">
-          <p class="dateToday"></p>
-          <p class="clock">00:00:00</p>
+        <div class="time main-screen__inside-box">
+          <h1 class="time__header box__header">Time</h1>
+          <div class="time__set box__shadow">
+            <p class="dateToday"></p>
+            <p class="clock">00:00:00</p>
+          </div>
         </div>
-        <div id="d-day" class="main-screen__inside-box">
-          <span id="d-day__header">Set your D-day</span>
-          <form id="d-day__form">
-            <input type="date" required />
-            <input type="submit" value="Click" />
-          </form>
-          <span id="d-day__result"></span>
-          <button id="reset__d-day" class="hidden">day reset</button>
+        <div class="d-day main-screen__inside-box">
+          <h1 class="d-day__header box__header">D-day</h1>
+          <div class="d-day__set box__shadow">
+            <span class="d-day__text">Set your D-day!</span>
+            <form class="d-day__form">
+              <input type="date" required />
+              <input type="submit" value="Enter" />
+            </form>
+            <span class="d-day__result"></span>
+            <button class="reset__d-day hidden">RESET</button>
+          </div>
         </div>
-        <div class="main-screen__inside-box">
-          <button>light</button>
-          <button>night</button>
+        <div class="random-image main-screen__inside-box">
+          <h1 class="random-image__header box__header">Today's photo</h1>
+          <div class="random-image__box"></div>
         </div>
       </div>
       <!-- quotes -->
@@ -130,7 +131,7 @@
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
-    <!-- <script src="js/background.js"></script> -->
+    <script src="js/randomImage.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/decimalday.js"></script>

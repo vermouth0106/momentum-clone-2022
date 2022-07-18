@@ -23,21 +23,22 @@ function paintTodo(newTodo) {
     toDoAlert.classList.remove(HIDDEN_CLASSNAME);
     setTimeout(function () {
       toDoAlert.classList.add(HIDDEN_CLASSNAME);
-    }, 1000);
+    }, 3000);
     toDos.pop();
   } else {
     const li = document.createElement("li");
     li.id = newTodo.id;
+    li.classList.add("box__shadow");
+
+    const buttonDel = document.createElement("button");
+    buttonDel.innerText = "V";
+    buttonDel.addEventListener("click", deleteToDo);
 
     const span = document.createElement("span");
     span.innerText = newTodo.text;
 
-    const buttonDel = document.createElement("button");
-    buttonDel.innerText = "❌";
-    buttonDel.addEventListener("click", deleteToDo);
-
-    li.appendChild(span);
     li.appendChild(buttonDel);
+    li.appendChild(span);
 
     toDoList.appendChild(li);
   }
