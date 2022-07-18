@@ -22,7 +22,7 @@ function onGeoSuccess(position) {
   fetch(url)
     .then((respone) => respone.json())
     .then((data) => {
-      const weatherName = document.querySelector("#weather .weather__name");
+      const weatherName = document.querySelector(".weather__name");
       const weatherTemp = document.querySelector(".weather__temp");
       const weatherIcon = document.querySelector(".weather__icon i");
       const weatherHumidity = document.querySelector(

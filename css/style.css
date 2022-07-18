@@ -1,53 +1,55 @@
 @import "reset.css";
 @import "login.css";
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f3;
 }
 
 .hidden {
   display: none;
 }
 
-/* main screen */
-/* background-img */
-
-#img-box > img {
+/* background image
+.background {
   z-index: -99;
   position: fixed;
   top: 0;
+}
+
+.background img {
   width: 100%;
   height: 100%;
+} */
+
+/* main, qutoes container */
+.container {
+  width: 1200px;
 }
 
+/* main screen */
 .main-screen {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  background-color: #d5d9db;
-}
-
-.main-screen__container {
-  margin: 20px 150px;
+  margin-bottom: 30px;
+  height: 600px;
   overflow: hidden;
   display: flex;
   align-items: center;
-  background-color: white;
-  border-radius: 30px;
-  opacity: 0.8;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .main-screen__box {
-  width: 300px;
-  height: 620px;
-  box-sizing: border-box;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  border-radius: 25px;
-  background-color: white;
 }
 
 .main-screen__inside-box {
@@ -57,31 +59,57 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: aqua;
 }
 
 /* screen-left */
+.main-screen__left {
+  padding: 15px 15px 0px 15px;
+  width: 25%;
+  background-color: rgba(173, 173, 173, 0.5);
+}
 
-.username__container {
+.username {
   height: 100px;
   line-height: 200%;
 }
 
-.username__hello {
-  font-size: 21px;
-  font-weight: 600;
-}
-
-.username__name {
+.username__header {
+  margin-bottom: 20px;
+  align-self: flex-start;
   font-size: 30px;
   font-weight: 600;
 }
 
-.username__reset {
-  text-transform: uppercase;
+.username__info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-#weather {
+.username__info div:first-child,
+.username__info div:last-child {
+  width: 10%;
+}
+
+.username__info div:nth-child(2) {
+  width: 80%;
+  text-align: center;
+}
+
+.username__name {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.username__reset {
+  font-size: 25px;
+}
+
+.username__reset:focus {
+  cursor: pointer;
+}
+
+.weather {
   height: 200px;
   display: flex;
   justify-content: flex-start;
@@ -153,13 +181,7 @@ body {
   width: 100%;
 }
 
-.music {
-  height: 100px;
-}
-
 .developer-links {
-  padding-left: 55px;
-  box-sizing: border-box;
   height: 70px;
   display: flex;
   justify-content: center;
@@ -185,9 +207,8 @@ body {
 }
 
 /* screen-todo (center) */
-
 .main-screen__todo {
-  width: 540px;
+  width: 50%;
 }
 
 .todo-header {
@@ -224,3 +245,24 @@ body {
 }
 
 /* screen-right */
+.main-screen__right {
+  width: 25%;
+}
+
+/* quotes */
+
+.quotes__container {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.quote {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: white;
+}
